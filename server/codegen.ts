@@ -6,7 +6,13 @@ const config: CodegenConfig = {
     "./src/types.ts": {
       plugins: ["typescript", "typescript-resolvers"],
       config: {
+        // file + ref of context types for resolvers
         contextType: "./context#DataSourceContext",
+        // file + ref of parent types for resolvers
+        mappers: {
+          Track: "./models#TrackModel",
+          Author: "./models#AuthorModel",
+        },
       },
     },
   },
